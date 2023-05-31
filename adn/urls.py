@@ -3,7 +3,7 @@ from django.urls import path
 from adn import views as admin1
 
 urlpatterns = [
-    path('', admin1.index),
+    path('index/', admin1.index),
     path('adminlogin/', admin1.adminlogin),
     path('adminhome/', admin1.adminhome),
     path('adminloginaction/', admin1.adminloginaction),
