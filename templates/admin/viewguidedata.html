@@ -1,0 +1,43 @@
+{% extends 'adminbase.html'%}
+{% load static %}
+{% block contents %}
+
+
+<div>
+
+       <!-- <h3 style="color:black">welcome to adminpage</h3>-->
+    <h2 style="color:white">View guide details</h2>
+                            <table border="2px solid blue" align="center">
+                                  <tr><th style="color:white">name</th>
+                                    <th style="color:white">mail</th>
+                                    <th style="color:white">passwd</th>
+                                    <th style="color:white">cwpasswd</th>
+                                    <th style="color:white">location</th>
+                                    <th style="color:white">mobileno</th>
+                                    <th style="color:white">status</th>
+                                    <th style="color:white">activate</th>
+                                  </tr>
+
+                              {% for x in qs %}
+                                  <tr>
+                                    <td style="color:orange">{{x.name}}</td>
+                                    <td style="color:orange">{{x.mail}}</td>
+                                    <td style="color:orange">{{x.passwd}}</td>
+                                    <td style="color:orange">{{x.cwpasswd}}</td>
+                                    <td style="color:orange">{{x.location}}</td>
+                                    <td style="color:orange">{{x.mobileno}}</td>
+                                    <td style="color:orange">{{x.status}}</td>
+
+                                    {% if x.status == 'waiting' %}
+                                    <td style="color:orange"> <a href="/activateguide/?pid={{ x.id }}" >Activate</a></td>
+                                    {% else %}
+                                            <td style="color:orange"> Activated</td>
+                                            {% endif %}
+
+                                     </tr>
+                                    {% endfor %}
+
+                            </table>
+                            </div>
+
+{% endblock %}

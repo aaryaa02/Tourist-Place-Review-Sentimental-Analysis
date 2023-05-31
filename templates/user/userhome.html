@@ -1,0 +1,15 @@
+{% extends 'userbase.html' %}
+
+{% block contents %}
+<div>
+
+        <h3 style="color:#ffd9a0e8">Welcome To Userpage</h3>
+    <table border="2" bgcolor="white" align="center">
+        
+    {% for x in data %}
+        <tr><th> {{x}}</th></tr>
+    {% endfor %}
+    </table>
+</div>
+    {% endblock %}
+

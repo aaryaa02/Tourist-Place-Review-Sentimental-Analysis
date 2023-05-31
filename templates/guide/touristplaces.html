@@ -1,0 +1,18 @@
+{% extends 'guidebase.html' %}
+{% load static %}
+{% block contents %}
+<div>
+
+    <table>
+         <tr>
+    {% for x in obj %}
+
+       <td><a href="/viewplaces/?id={{x.id}}&placename={{x.placename}}&information={{x.information}}&package={{x.package}}"><img src="{{x.file.url}}" style="width:10em;height:10em;"></a></td>
+
+             <td><text style="color:white">{{x.placename}}</text></td>
+
+    {% endfor %}
+        </tr>
+         </table>
+</div>
+    {% endblock %}
